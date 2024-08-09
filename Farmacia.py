@@ -12,23 +12,23 @@ def guardarArchivo(dato):
 
 def compras():
         comprita=[]
-        with open("compra.json",encoding="utf-8") as openarchivo:
+        with open("compra.json",encoding="utf-8") as openarchivo:#esto es para abrir el json de compra
             comprita=json.load( openarchivo)
         return comprita
 
 def guardarcompra(compris):
-    with open("compra.json", "w") as archivo:
+    with open("compra.json", "w") as archivo:#esto es para guardar info en el json de compra
         json.dump(compris,archivo)
 
-def menu():#primer menú o principal
+def menu():#Menú  principal
     print("==============FARMACIA=================\n"
       " ELIGE LA OPCIÖN A LA QUE QUIERES ACCEDER\n"
       "1. REGISTROS DE VENTAS\n"
       "2. REGISTROS DE COMPRAS\n"
       "3. SALIR\n"
       "========================================")
-comprass=compras()
-ventas=abrirArchivo()
+comprass=compras()#json compra
+ventas=abrirArchivo()#json ventas
 booleanito=True
 while booleanito==True:
     menu()#abre el primer menú
@@ -39,6 +39,7 @@ while booleanito==True:
        
         ventas=abrirArchivo()
         #pide info para agregar cada registro de venta
+
         print("============REGISTRO DE VENTAS============\n")  
         fechaVenta=input("ingrese la fecha de venta :  ")
         nombre1=input("ingrese el nombre del paciente : ")
@@ -49,14 +50,18 @@ while booleanito==True:
         cantidadVendida=int(input("ingrese la cantidad :  "))
         precio=int(input("ingrese el precio del medicamento : "))
         print("======================================")
-
+ 
+        #recopila la información para guardarla en el json de ventas
         ventas[0]["ventas"].append({"fechaVenta":fechaVenta,"paciente":{"nombre":nombre1,"direccion":direccion},"empleado":{ "nombre":nombre2, "cargo":cargo},"medicamentosVendidos":[{
              "nombreMedicamento": nombreMedicamento, "cantidadVendida": cantidadVendida ,"Precio":precio}]})
         print("Su registro se ha hecho con exito!!")
         guardarArchivo(ventas)
+
+
     if opc==2:
         comprass=compras()
-        #pide la info para crear los registrod de compras
+
+        #pide la info para crear los registros de compras
         print("============REGISTRO DE COMPRAS============\n")  
         fecha=input("ingrese la fecha de compra:  ")
         nombre1=input("ingrese el nombre del proveedor: ")
@@ -67,11 +72,17 @@ while booleanito==True:
         cantidadVendida=int(input("ingrese la cantidad :  "))
         precio=int(input("ingrese el precio de compra: "))
         print("======================================")
-
+        
+        #recopila la información para guardarla en el json de compra
         comprass[0]["compra"].append({"fechaCompra":fecha,"proveedor":{"nombre":nombre1,"contacto":contacto},"medicamentosVendidos":[{
              "medicamentosComprados": nombreMedicamento, "cantidadComprada": cantidadVendida ,"precioCompra":precio}]})
         print("Su registro se ha hecho con exito!!")
         guardarcompra(comprass)
-    if opc==3:
+
+    if opc==3:#finaliz el programa
         print("Saliendo del programa...")
         booleanito=False
+
+        
+    #desarrollado por Botello Garcia Yurley t.i: 1066085539
+                                
