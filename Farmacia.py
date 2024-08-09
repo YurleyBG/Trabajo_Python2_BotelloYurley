@@ -59,7 +59,7 @@ while booleanito==True:
         print("")
         print("======lista de Medicamentos====")
         print("")
-        for  r  in medicinas[0]["medicina"]:
+        for  r  in medicinas[0]["medicina"]:#mostrar medicamentos y precios
             print("-", r["nombre"],"precio:",r["precio"])
         print("======================================")
         nombreMedicamento=input("ingrese el nombre del medicamento :  ")
@@ -89,7 +89,7 @@ while booleanito==True:
         print("")
         print("======lista de Medicamentos====")
         print("")
-        for  r  in medicinas[0]["medicina"]:
+        for  r  in medicinas[0]["medicina"]:#mostrar medicamentos,stock y precios
             print("-", r["nombre"],"precio:",r["precio"],"stock",r["stock"])
         print("======================================")
         nombreMedicamento=input("ingrese el nombre del medicamento :  ")
