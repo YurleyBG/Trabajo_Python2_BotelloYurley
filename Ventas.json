@@ -185,6 +185,24 @@
                         "precio": 20
                     }
                 ]
+            },
+            {
+                "fechaVenta": "02-08-2024",
+                "paciente": {
+                    "nombre": "yeferson",
+                    "direccion": "divino ni\u00f1o"
+                },
+                "empleado": {
+                    "nombre": "pedro",
+                    "cargo": "vendedor"
+                },
+                "medicamentosVendidos": [
+                    {
+                        "nombreMedicamento": "Losartan",
+                        "cantidadVendida": 1,
+                        "Precio": 55
+                    }
+                ]
             }
         ]
     }
